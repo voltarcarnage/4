@@ -1,2 +1,0 @@
-Necromancer
-Rogue-like game
