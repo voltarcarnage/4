@@ -1,8 +1,9 @@
+
 #include "entity.h"
+#include "enemy.h"
 #include "spells.h"
 
 #pragma once
-
 namespace Game_N{
 
   class Hero : public Entity{
@@ -12,12 +13,13 @@ namespace Game_N{
       int mana_;
       int maxMana_;
       int expToNextLvl_;
-      int strength_;
       int range_;
+      int amountOfUndeads_;
+      std::vector<Enemy> undeads_;
       std::map<std::string, Spells* > spell_;
     public:
       Hero();
-      Hero(std::string name, int hp, int maxHp, int lvl, int exp, int mana, int maxMana, int expToNextLvl, int strength, int range);
+      Hero(std::string name, int lvl, int exp, int mana, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
 
       int getLvl() const {return lvl_;}
       int getExp() const {return exp_;}
@@ -25,14 +27,13 @@ namespace Game_N{
       int getMaxMana() const {return maxMana_;}
       int getExpToNextLvl() const {return expToNextLvl_;}
       int getRange() const {return range_;}
-      int getStrength() const {return strength_;}
-      int getUndeads() const;
+      // int getUndeads() const;
 
       bool takeDamage(int damage);
 
       void gainExp(int exp);
-      void gain_lvl();
-      void heal(int hp);
+      void lvlUp();
+      void heal(int heal, int mana);
 
       void setRange(int range) {range_ = range;}
       void setLvl(int lvl) {lvl_ = lvl;}
@@ -40,7 +41,7 @@ namespace Game_N{
       void setMana(int mana) {mana_ = mana;}
       void setMaxMana(int maxMana) {maxMana_ = maxMana;}
       void setExpToNextLvl(int nextLvl) {expToNextLvl_ = nextLvl;}
-      void setStrength(int strength) {strength_ = strength;}
+      // void setStrength(int strength) {strength_ = strength;} Don't use
 
       ~Hero();
   };

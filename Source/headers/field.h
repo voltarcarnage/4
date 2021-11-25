@@ -1,6 +1,6 @@
+
 #include "hero.h"
 #include "alive_enemy.h"
-
 #pragma once
 
 namespace Game_N{

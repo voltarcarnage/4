@@ -1,15 +1,19 @@
-#include <iostream>
+
+// #include "hero.h"
+// #include "enemy.h"
 
 #pragma once
 
 namespace Game_N{
 
   class Spells{
-    private:
+    protected:
       int lvlOfSpell_;
       int dmgBySpell_;
       int rangeOfSpell_;
     public:
+      Spells();
+
       int getLvlOfSpell() const {return lvlOfSpell_;}
       int getDmgBySpell() const {return dmgBySpell_;}
       int getRangeOfSpell() const {return rangeOfSpell_;}
@@ -21,27 +25,27 @@ namespace Game_N{
   };
 
   class Necromancy : public Spells{
-    private:
-      int amountOfundeads_;
     public:
-      int getAmountOfUndeads() const {return amountOfundeads_;}
-      void setAmountOfUndeads(int amount) {amountOfundeads_ = amount;}
+      Necromancy();
 
       void castSpell();
   };
 
   class Curse : public Spells{
     public:
-        void castSpell();
+      Curse();
+      void castSpell();
   };
 
   class Morphism : public Spells{
     public:
+      Morphism();
       void castSpell();
   };
 
   class Desiccation : public Spells{
     public:
+      Desiccation();
       void castSpell();
   };
 

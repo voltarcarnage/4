@@ -1,3 +1,4 @@
+
 #include "entity.h"
 #include "spells.h"
 
@@ -5,7 +6,7 @@
 
 namespace Game_N{
 
-  class Enemy{
+  class Enemy : public Entity{
     private:
       enum Directions { Up, Down, Right, Left, Stop };
       bool alive_, detectPlayer_;
@@ -35,6 +36,8 @@ namespace Game_N{
       // void setPos(int x, int y) {xCoord_ = x; yCoord_ = y;}
       bool takeDamage(int dmg);
       bool isAlive();
+      void die();
+
 
       bool moveUp();
       bool moveDown();

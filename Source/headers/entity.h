@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 #include <map>
@@ -8,7 +9,7 @@
 namespace Game_N{
 
   class Entity{
-    private:
+    protected:
       enum Fractions {Goblin, Skeleton, Orc, Golem, Human};
       std::string name_;
       int maxHp_;
@@ -19,6 +20,9 @@ namespace Game_N{
       int xCoord_;
       int yCoord_;
     public:
+      Entity();
+      // Entity(std::string name, Fractions fraction);
+
       std::string getName() const {return name_;}
       int getHp() const {return hp_;}
       int getMaxHp() const {return maxHp_;}
