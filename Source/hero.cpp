@@ -21,13 +21,15 @@ namespace Game_N{
     spell_.insert(std::make_pair("desiccation", desiccation));
   }
 
-  Hero::Hero(std::string name, int lvl, int exp, int mana, int maxMana, int expToNextLvl, int amountOfUndeads, int range)
+  Hero::Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range)
   {
-    name_ = name;
     lvl_ = lvl;
+    maxHp_ = maxHp;
+    hp_ = maxHp_;
+    damage_ = damage;
     exp_ = exp;
     maxMana_ = maxMana;
-    mana_ = mana;
+    mana_ = maxMana;
     expToNextLvl_ = expToNextLvl;
     range_ = range;
     amountOfUndeads_ = amountOfUndeads;

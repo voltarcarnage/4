@@ -19,7 +19,7 @@ namespace Game_N{
       std::map<std::string, Spells* > spell_;
     public:
       Hero();
-      Hero(std::string name, int lvl, int exp, int mana, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
+      Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
 
       int getLvl() const {return lvl_;}
       int getExp() const {return exp_;}
@@ -27,7 +27,7 @@ namespace Game_N{
       int getMaxMana() const {return maxMana_;}
       int getExpToNextLvl() const {return expToNextLvl_;}
       int getRange() const {return range_;}
-      // int getUndeads() const;
+      int getUndeads() const {return amountOfUndeads_;}
 
       bool takeDamage(int damage);
 
@@ -42,8 +42,6 @@ namespace Game_N{
       void setMaxMana(int maxMana) {maxMana_ = maxMana;}
       void setExpToNextLvl(int nextLvl) {expToNextLvl_ = nextLvl;}
       // void setStrength(int strength) {strength_ = strength;} Don't use
-
-      ~Hero();
   };
 
 }
