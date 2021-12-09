@@ -34,21 +34,21 @@ namespace Game_N{
 
     switch(status_)
     {
-      case Play:{
-        if(manager_.gameOn())
-        {
-          manager_.updateAll(gameWindow_);
-					manager_.drawAll(gameWindow_);
-
-          gameWindow_.display();
-        }
-        else
-        {
-          status_ = Exit;
-        }
-
-        break;
-      }
+      // case Play:{
+      //   if(manager_.gameOn())
+      //   {
+      //     manager_.updateAll(gameWindow_);
+			// 		manager_.drawAll(gameWindow_);
+      //
+      //     gameWindow_.display();
+      //   }
+      //   else
+      //   {
+      //     status_ = Exit;
+      //   }
+      //
+      //   break;
+      // }
 
       case Exit:{
         endGame();

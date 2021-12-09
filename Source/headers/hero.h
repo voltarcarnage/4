@@ -41,6 +41,7 @@ namespace Game_N{
       void setMana(int mana) {mana_ = mana;}
       void setMaxMana(int maxMana) {maxMana_ = maxMana;}
       void setExpToNextLvl(int nextLvl) {expToNextLvl_ = nextLvl;}
+      void castASpell(int choise);
       // void setStrength(int strength) {strength_ = strength;} Don't use
   };
 

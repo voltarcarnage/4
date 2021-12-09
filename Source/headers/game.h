@@ -6,7 +6,7 @@
 #include <tuple>
 #include <regex>
 
-#include "gameManage.h"
+// #include "gameManage.h"
 
 #pragma once
 
@@ -20,7 +20,7 @@ namespace Game_N{
       sf::RenderWindow gameWindow_;
       void showMenu();
       void endGame();
-      GameManager manager_;
+      // GameManager manager_;
     public:
       void Start();
       sf::RenderWindow& getWindow();

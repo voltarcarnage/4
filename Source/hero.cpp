@@ -88,5 +88,15 @@ namespace Game_N{
       mana_ = maxMana_;
   }
 
+  void Hero::castASpell(int choice)
+  {
+    switch(choice)
+    {
+      case 0:
+      {
+        this->spell_["Necromance"]->castSpell();
+      }
+    }
+  }
 
 }
