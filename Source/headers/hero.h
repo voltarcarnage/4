@@ -1,4 +1,4 @@
-
+#include "table.h"
 #include "entity.h"
 #include "enemy.h"
 #include "spells.h"
@@ -16,9 +16,9 @@ namespace Game_N{
       int range_;
       int amountOfUndeads_;
       std::vector<Enemy> undeads_;
-      std::map<std::string, Spells* > spell_;
+      Table<std::string, Spells* > spell_;
       sf::Vector2f coords_;
-      sf::RectangleShape rect_;
+      sf::CircleShape circle_;
     public:
       Hero();
       Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
@@ -30,8 +30,8 @@ namespace Game_N{
       int getExpToNextLvl() const {return expToNextLvl_;}
       int getRange() const {return range_;}
       int getUndeads() const {return amountOfUndeads_;}
-      sf::RectangleShape getShape() const {return rect_;}
-      sf::Vector2f getCoords(){ return rect_.getPosition(); };
+      sf::CircleShape getShape() const {return circle_;}
+      sf::Vector2f getCoords(){ return circle_.getPosition(); };
 
       bool takeDamage(int damage);
       bool isAlive();
@@ -47,7 +47,8 @@ namespace Game_N{
       void setMaxMana(int maxMana) {maxMana_ = maxMana;}
       void setExpToNextLvl(int nextLvl) {expToNextLvl_ = nextLvl;}
       void castASpell(int choise);
-      void setCoords(sf::Vector2f coords){ rect_.setPosition(coords); };
+      void setCoords(sf::Vector2f coords){ circle_.setPosition(coords); };
+      // ~Hero();
       // void setStrength(int strength) {strength_ = strength;} Don't use
   };
 

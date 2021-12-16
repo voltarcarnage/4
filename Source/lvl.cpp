@@ -16,7 +16,7 @@ namespace Game_N{
               for(int x = 0; x < str.size(); ++x){
                   switch(str[x]){
                       case '#': {//wall
-                          Cell c(sf::Vector2f(x, y), 0, sf::Color::Black);
+                          Cell c(sf::Vector2f(x, y), 0, sf::Color::Cyan);
                           cell.push_back(c);
                           break;
                       }
@@ -46,8 +46,8 @@ namespace Game_N{
                           break;
                       }
                       case 'z':{//enemy
-                        Cell c(sf::Vector2f(x, y), 6, sf::Color(0, 255, 0));
-                        enemies_.emplace_back(1,2,10, "ork", sf::Vector2i(x, y));
+                        Cell c(sf::Vector2f(x, y), 1, sf::Color(0, 255, 0));
+                        enemies_.emplace_back(1,2,10, "ork", sf::Vector2f(x, y));
                         cell.push_back(c);
                         break;
                       }

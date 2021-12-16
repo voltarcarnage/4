@@ -1,6 +1,8 @@
-#include <exception>
+#include <iostream>
+#include <cstring>
 
 #pragma once
+
 namespace Game_N{
 
   template <class IND, class INF>
@@ -60,11 +62,16 @@ namespace Game_N{
   void Table<IND,INF>::addSpell(const IND & ind, const INF &inf)
   {
     Pair<IND,INF> * arrTemp = new Pair<IND,INF>[cur + 1];
-    memcpy(arrTemp, arr, cur);
-    delete []arr;
+    for(int i = 0; i < cur; i++)
+    {
+      arrTemp[i].first = arr[i].first;
+      arrTemp[i].second = arr[i].second;
+    }
+    arrTemp[cur].first = ind;
+    arrTemp[cur].second = inf;
+
     arr = arrTemp;
-    arr[cur].first = ind;
-    arr[cur].second = inf;
+
     cur++;
   }
 

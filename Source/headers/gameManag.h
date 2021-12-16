@@ -24,6 +24,8 @@ namespace Game_N{
         void chooseEvent();//chooses what to do (close/press/release key)
         // void updatePlayer(sf::Time dt);//updating movement and etc
         // void updateEnemy(sf::Time dt);//updating movement and etc
+        void moveHero();
+        void interactionWithMap();
         void update();//prints all stuff
         void start();//run
         // void changeLevel();

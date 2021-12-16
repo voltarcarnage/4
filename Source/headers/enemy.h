@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
+#include "cell.h"
 #include "entity.h"
 #include "spells.h"
 
@@ -17,30 +18,32 @@ namespace Game_N{
       int lvl_;
       int range_;
       int targetFreshness_ = 0;
-      sf::Vector2i position_;
-		  sf::Vector2i heroPos_;
+      sf::Vector2f position_;
+		  sf::Vector2f heroPos_;
       bool movingUp_,movingDown_,movingLeft_,movingRight_,faceUp_, faceDown_,faceLeft_,faceRight_;
       Necromancy necromancy;
+      Cell cell_;
     public:
-      Enemy(sf::Vector2i pos); //SFML
-      Enemy(int lvl, int range, int damage, std::string name, sf::Vector2i pos);
+      Enemy(sf::Vector2f pos); //SFML
+      Enemy(int lvl, int range, int damage, std::string name, sf::Vector2f pos);
 
       int getLvl() const {return lvl_;}
       // int getStrength() const {return strength_;}
       int getRange() const {return range_;}
       int getDamage() const {return damage_;}
-      sf::Vector2i getPos() const {return position_;}
+      Cell getCell() const {return cell_;}
+      sf::Vector2f getPos() const {return position_;}
 
       void setLvl(int lvl) {lvl_ = lvl;}
       // void setStrength(int strength) {strength_ = strength;}
       void setRange(int range) {range_ = range;}
       void setDamage(int damage) {damage_ = damage;}
-      void setPos(int x, int y) {position_ = sf::Vector2i(x,y);}
+      void setPos(int x, int y) {position_ = sf::Vector2f(x,y);}
       // void setImg(sf::Sprite& img);
 
-      void setTargetPos(sf::Vector2i pos);
+      void setTargetPos(sf::Vector2f pos);
 		  bool isFreshTarget();
-		  void detectHero(sf::Vector2i pos);
+		  void detectHero(sf::Vector2f pos);
 		  void undetectHero();
 
       void gainLvl(int lvl);

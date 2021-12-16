@@ -12,17 +12,17 @@ namespace Game_N{
     range_ = 2;
     amountOfUndeads_ = 2;
     coords_ = sf::Vector2f(0.f, 0.f);
-    rect_.setSize(sf::Vector2f(50.f, 50.f));
-    rect_.setPosition(100.f, 100.f);
-    rect_.setFillColor(sf::Color::Blue);
+    circle_.setRadius(30.f);
+    circle_.setPosition(100.f, 100.f);
+    circle_.setFillColor(sf::Color::Blue);
     Spells* necromancy = new Necromancy();
     Spells* curse = new Curse();
     Spells* morphism = new Morphism();
     Spells* desiccation = new Desiccation();
-    spell_.insert(std::make_pair("necromancy", necromancy));
-    spell_.insert(std::make_pair("curse", curse));
-    spell_.insert(std::make_pair("morphism", morphism));
-    spell_.insert(std::make_pair("desiccation", desiccation));
+    spell_.addSpell("necromancy", necromancy);
+    spell_.addSpell("curse", curse);
+    spell_.addSpell("morphism", morphism);
+    spell_.addSpell("desiccation", desiccation);
   }
 
   Hero::Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range)
@@ -41,14 +41,12 @@ namespace Game_N{
     Spells* curse = new Curse();
     Spells* morphism = new Morphism();
     Spells* desiccation = new Desiccation();
-    spell_.insert(std::make_pair("necromancy", necromancy));
-    spell_.insert(std::make_pair("curse", curse));
-    spell_.insert(std::make_pair("morphism", morphism));
-    spell_.insert(std::make_pair("desiccation", desiccation));
+    spell_.addSpell("necromancy", necromancy);
+    spell_.addSpell("curse", curse);
+    spell_.addSpell("morphism", morphism);
+    spell_.addSpell("desiccation", desiccation);
   }
-
-  // int Hero::getUndeads() const{}
-
+  
   bool Hero::isAlive()
   {
     return (hp_ > 0 ? true : false);

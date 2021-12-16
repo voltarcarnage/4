@@ -2,7 +2,7 @@
 
 namespace Game_N{
 
-  Enemy::Enemy(sf::Vector2i pos)
+  Enemy::Enemy(sf::Vector2f pos)
   {
     alive_ = true;
     // fraction_ = fraction;
@@ -15,13 +15,15 @@ namespace Game_N{
   	damage_ = 5;
   	range_ = 3;
 
+    cell_ = Cell(pos,2,sf::Color(100,100,100));
+
   	movingUp_ = false;
   	movingDown_ = false;
   	movingLeft_ = false;
   	movingRight_ = false;
   }
 
-  Enemy::Enemy(int lvl, int range, int damage,std::string name, sf::Vector2i pos)
+  Enemy::Enemy(int lvl, int range, int damage,std::string name, sf::Vector2f pos)
   {
     alive_ = true;
     lvl_ = lvl;
@@ -30,6 +32,8 @@ namespace Game_N{
     // fraction_ = fraction;
     name_ = name;
     position_ = pos;
+
+    cell_ = Cell(pos,2,sf::Color(204,0,102));
 
     movingUp_ = false;
   	movingDown_ = false;
@@ -139,7 +143,7 @@ namespace Game_N{
     position_.x += 1;
   }
 
-  void Enemy::detectHero(sf::Vector2i pos)
+  void Enemy::detectHero(sf::Vector2f pos)
   {
     detectHero_ = true;
     setTargetPos(pos);
@@ -150,7 +154,7 @@ namespace Game_N{
     detectHero_ = false;
   }
 
-  void Enemy::setTargetPos(sf::Vector2i pos)
+  void Enemy::setTargetPos(sf::Vector2f pos)
   {
     heroPos_ = pos;
     targetFreshness_ = 3;

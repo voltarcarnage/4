@@ -30,15 +30,11 @@ namespace Game_N{
         for(auto & j : i){
            window_.draw(j.getRectangle());
        }
-    // for(auto & i : levels_[level_].get_enemies()) {//enemies
-    //     this->window.draw(i.get_tile().get_rect());
-    //     this->window.draw(i.get_info().get_max_hp());
-    //     this->window.draw(i.get_info().get_cur_hp());
-    // }
-
-    // for(auto & i : this->levels[this->cur_level].get_items()) {//item
-    //     this->window.draw(i->get_tile().get_rect());
-    // }
+    for(auto & i : levels_[level_].getEnemies()) {//enemies
+        window_.draw(i.getCell().getRectangle());
+        // window.draw(i.get_info().get_max_hp());
+        // window.draw(i.get_info().get_cur_hp());
+    }
 
     window_.draw(hero_.getShape());//player
 
@@ -84,12 +80,51 @@ namespace Game_N{
         NUM2_ = pressed;
   }
 
+  void GameManager::interactionWithMap()
+  {
+
+  }
+
+  void GameManager::moveHero()
+  {
+    if(UP_)
+    {
+      sf::Vector2f vec;
+      vec = hero_.getCoords();
+      vec.y--;
+      hero_.setCoords(vec);
+    }
+    else if(DOWN_)
+    {
+      sf::Vector2f vec;
+      vec = hero_.getCoords();
+      vec.y++;
+      hero_.setCoords(vec);
+    }
+    else if(RIGHT_)
+    {
+      sf::Vector2f vec;
+      vec = hero_.getCoords();
+      vec.x++;
+      hero_.setCoords(vec);
+    }
+    else if(LEFT_)
+    {
+      sf::Vector2f vec;
+      vec = hero_.getCoords();
+      vec.x--;
+      hero_.setCoords(vec);
+    }
+  }
+
   void GameManager::start()
   {
     sf::Time time = sf::seconds(1.f / 60.f);
+    window_.setFramerateLimit(60);
     while(window_.isOpen() && hero_.isAlive())
     {
         chooseEvent();
+        moveHero();
         // update_enemy(time);
         // update_player(time);
         update();
