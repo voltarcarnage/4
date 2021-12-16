@@ -1,8 +1,8 @@
-#include "headers/game.h"
+#include "headers/gameManag.h"
 
 int main()
 {
-  Game_N::Game game;
-  game.Start();
+  Game_N::GameManager g;
+  g.start();
   return 0;
 }

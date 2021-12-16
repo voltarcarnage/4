@@ -17,6 +17,8 @@ namespace Game_N{
       int amountOfUndeads_;
       std::vector<Enemy> undeads_;
       std::map<std::string, Spells* > spell_;
+      sf::Vector2f coords_;
+      sf::RectangleShape rect_;
     public:
       Hero();
       Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
@@ -28,8 +30,11 @@ namespace Game_N{
       int getExpToNextLvl() const {return expToNextLvl_;}
       int getRange() const {return range_;}
       int getUndeads() const {return amountOfUndeads_;}
+      sf::RectangleShape getShape() const {return rect_;}
+      sf::Vector2f getCoords(){ return rect_.getPosition(); };
 
       bool takeDamage(int damage);
+      bool isAlive();
 
       void gainExp(int exp);
       void lvlUp();
@@ -42,6 +47,7 @@ namespace Game_N{
       void setMaxMana(int maxMana) {maxMana_ = maxMana;}
       void setExpToNextLvl(int nextLvl) {expToNextLvl_ = nextLvl;}
       void castASpell(int choise);
+      void setCoords(sf::Vector2f coords){ rect_.setPosition(coords); };
       // void setStrength(int strength) {strength_ = strength;} Don't use
   };
 

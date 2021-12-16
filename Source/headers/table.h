@@ -1,5 +1,6 @@
 #include <exception>
 
+#pragma once
 namespace Game_N{
 
   template <class IND, class INF>
@@ -29,6 +30,10 @@ namespace Game_N{
 
       Table<IND, INF>& operator =(const Table<IND, INF> &);
 
+      void setInf(const IND &, const INF &);
+      void addSpell(const IND &,const INF &);
+      int getSize();
+
       INF & operator[](const IND &); // l-value
       const INF & operator[](const IND &) const; // r-value
       typedef TableIt<IND, INF> Iterator;
@@ -38,9 +43,35 @@ namespace Game_N{
   };
 
   template <class IND, class INF>
+  void Table<IND,INF>::setInf(const IND & ind, const INF &inf)
+  {
+    for(int i = 0; i < cur; ++i)
+      if(arr[i].first == ind)
+        arr[i].second = inf;
+  }
+
+  template <class IND, class INF>
+  int Table<IND,INF>::getSize()
+  {
+    return cur;
+  }
+
+  template <class IND, class INF>
+  void Table<IND,INF>::addSpell(const IND & ind, const INF &inf)
+  {
+    Pair<IND,INF> * arrTemp = new Pair<IND,INF>[cur + 1];
+    memcpy(arrTemp, arr, cur);
+    delete []arr;
+    arr = arrTemp;
+    arr[cur].first = ind;
+    arr[cur].second = inf;
+    cur++;
+  }
+
+  template <class IND, class INF>
   Table<IND, INF>::Table(const Table<IND, INF> &a):cnt(a.cnt), cur(a.cur), arr(new Pair<IND,INF>[a.cnt])
   {
-    for(int i = 0; i < cnt; ++i)
+    for(int i = 0; i < cur; ++i)
       arr[i] = a.arr[i];
   }
 
@@ -95,7 +126,7 @@ namespace Game_N{
   {
     int i = getPos(s);
     if (i < 0)
-      throw std::exception("Illegal index");
+      throw ("Illegal index");
     return arr[i].second;
   }
 

@@ -11,6 +11,10 @@ namespace Game_N{
     expToNextLvl_ = 100;
     range_ = 2;
     amountOfUndeads_ = 2;
+    coords_ = sf::Vector2f(0.f, 0.f);
+    rect_.setSize(sf::Vector2f(50.f, 50.f));
+    rect_.setPosition(100.f, 100.f);
+    rect_.setFillColor(sf::Color::Blue);
     Spells* necromancy = new Necromancy();
     Spells* curse = new Curse();
     Spells* morphism = new Morphism();
@@ -44,6 +48,11 @@ namespace Game_N{
   }
 
   // int Hero::getUndeads() const{}
+
+  bool Hero::isAlive()
+  {
+    return (hp_ > 0 ? true : false);
+  }
 
   bool Hero::takeDamage(int damage)
   {
