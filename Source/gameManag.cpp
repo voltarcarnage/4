@@ -82,7 +82,7 @@ namespace Game_N{
 
   void GameManager::interactionWithMap()
   {
-
+    
   }
 
   void GameManager::moveHero()

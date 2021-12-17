@@ -1,0 +1,244 @@
+\hypertarget{classGame__N_1_1Table}{}\doxysection{Game\+\_\+N\+::Table$<$ I\+ND, I\+NF $>$ Class Template Reference}
+\label{classGame__N_1_1Table}\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+
+
+Класс таблицы  
+
+
+
+
+{\ttfamily \#include $<$table.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Table_a2057f4137eed20ff2930d8b5c7aadb14}\label{classGame__N_1_1Table_a2057f4137eed20ff2930d8b5c7aadb14}} 
+typedef \mbox{\hyperlink{classGame__N_1_1TableIt}{Table\+It}}$<$ I\+ND, I\+NF $>$ {\bfseries Iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Table_a7726d5c47e5fb8b850adf8078f46dc2a}\label{classGame__N_1_1Table_a7726d5c47e5fb8b850adf8078f46dc2a}} 
+\mbox{\hyperlink{classGame__N_1_1Table_a7726d5c47e5fb8b850adf8078f46dc2a}{Table}} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор таблицы \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame__N_1_1Table_aba27ac82812141ac7398f21e1cbe9073}{Table}} (const \mbox{\hyperlink{classGame__N_1_1Table}{Table}}$<$ I\+ND, I\+NF $>$ \&)
+\begin{DoxyCompactList}\small\item\em Копирующий конструктор таблицы \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame__N_1_1Table_ab9eefb79bcbc18b14818d60f8cae2355}\label{classGame__N_1_1Table_ab9eefb79bcbc18b14818d60f8cae2355}} 
+\mbox{\hyperlink{classGame__N_1_1Table_ab9eefb79bcbc18b14818d60f8cae2355}{$\sim$\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор таблицы \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame__N_1_1Table}{Table}}$<$ I\+ND, I\+NF $>$ \& \mbox{\hyperlink{classGame__N_1_1Table_a61bb36d8da161e6d6b614050abecaff0}{operator=}} (const \mbox{\hyperlink{classGame__N_1_1Table}{Table}}$<$ I\+ND, I\+NF $>$ \&)
+\begin{DoxyCompactList}\small\item\em Перегруженный оператор присваивания(копирующий) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame__N_1_1Table_af4469ccd8591610036c941c0403a38ec}{set\+Inf}} (const I\+ND \&, const I\+NF \&)
+\begin{DoxyCompactList}\small\item\em Метод изменения информации по индексу \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame__N_1_1Table_a34460cbc74f98eaaa7c76ade6139cc9e}{add\+Spell}} (const I\+ND \&, const I\+NF \&)
+\begin{DoxyCompactList}\small\item\em Метод добавления заклинания в таблицу \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame__N_1_1Table_a1f8cc41a843f8597065234b33e2190cb}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Метод получения размеров таблицы \end{DoxyCompactList}\item 
+I\+NF \& \mbox{\hyperlink{classGame__N_1_1Table_ac29113253e7f3fea1b0c5a5ae196debd}{operator\mbox{[}$\,$\mbox{]}}} (const I\+ND \&)
+\begin{DoxyCompactList}\small\item\em Перегруженный оператор индексации l-\/value. \end{DoxyCompactList}\item 
+const I\+NF \& \mbox{\hyperlink{classGame__N_1_1Table_a522870291ba4a09d123270a4ea12b9c8}{operator\mbox{[}$\,$\mbox{]}}} (const I\+ND \&) const
+\begin{DoxyCompactList}\small\item\em Перегруженный оператор индексации r-\/value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame__N_1_1TableIt}{Iterator}} \mbox{\hyperlink{classGame__N_1_1Table_a47498858e656577ae99b0c997978f131}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Метод начальный элемент таблицы \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame__N_1_1TableIt}{Iterator}} \mbox{\hyperlink{classGame__N_1_1Table_ad2843a5a7ccc5ef839a4d4959999fe93}{end}} ()
+\begin{DoxyCompactList}\small\item\em Метод конечный элемент таблицы \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame__N_1_1TableIt}{Iterator}} \mbox{\hyperlink{classGame__N_1_1Table_a95942923ef035ef4ce5c0e6d115568d0}{find}} (const I\+ND \&) const
+\begin{DoxyCompactList}\small\item\em Метод поиска в таблице по индексу \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Table_a0479f8b04e9cd78f31351cf94c080229}\label{classGame__N_1_1Table_a0479f8b04e9cd78f31351cf94c080229}} 
+class {\bfseries Table\+It$<$ I\+N\+D, I\+N\+F $>$}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class I\+ND, class I\+NF$>$\newline
+class Game\+\_\+\+N\+::\+Table$<$ I\+N\+D, I\+N\+F $>$}
+
+Класс таблицы 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em I\+ND} & -\/ параметр ключ \\
+\hline
+{\em I\+NF} & -\/ параметр значение \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame__N_1_1Table_aba27ac82812141ac7398f21e1cbe9073}\label{classGame__N_1_1Table_aba27ac82812141ac7398f21e1cbe9073}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!Table@{Table}}
+\index{Table@{Table}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+\mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::\mbox{\hyperlink{classGame__N_1_1Table}{Table}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGame__N_1_1Table}{Table}}$<$ I\+ND, I\+NF $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Копирующий конструктор таблицы 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на таблицу \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame__N_1_1Table_a34460cbc74f98eaaa7c76ade6139cc9e}\label{classGame__N_1_1Table_a34460cbc74f98eaaa7c76ade6139cc9e}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!addSpell@{addSpell}}
+\index{addSpell@{addSpell}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{addSpell()}{addSpell()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+void \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::add\+Spell (\begin{DoxyParamCaption}\item[{const I\+ND \&}]{ind,  }\item[{const I\+NF \&}]{inf }\end{DoxyParamCaption})}
+
+
+
+Метод добавления заклинания в таблицу 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на индекс и на информацию \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGame__N_1_1Table_a47498858e656577ae99b0c997978f131}\label{classGame__N_1_1Table_a47498858e656577ae99b0c997978f131}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!begin@{begin}}
+\index{begin@{begin}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+\mbox{\hyperlink{classGame__N_1_1TableIt}{Table\+It}}$<$ I\+ND, I\+NF $>$ \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::begin}
+
+
+
+Метод начальный элемент таблицы 
+
+\begin{DoxyReturn}{Returns}
+Возвращает итератор на начало таблицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_ad2843a5a7ccc5ef839a4d4959999fe93}\label{classGame__N_1_1Table_ad2843a5a7ccc5ef839a4d4959999fe93}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!end@{end}}
+\index{end@{end}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+\mbox{\hyperlink{classGame__N_1_1TableIt}{Table\+It}}$<$ I\+ND, I\+NF $>$ \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::end}
+
+
+
+Метод конечный элемент таблицы 
+
+\begin{DoxyReturn}{Returns}
+Возвращает итератор на конец таблицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_a95942923ef035ef4ce5c0e6d115568d0}\label{classGame__N_1_1Table_a95942923ef035ef4ce5c0e6d115568d0}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!find@{find}}
+\index{find@{find}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+\mbox{\hyperlink{classGame__N_1_1TableIt}{Table\+It}}$<$ I\+ND, I\+NF $>$ \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::find (\begin{DoxyParamCaption}\item[{const I\+ND \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Метод поиска в таблице по индексу 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на поле индекса \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает итератор на элемент с таким индексом 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_a1f8cc41a843f8597065234b33e2190cb}\label{classGame__N_1_1Table_a1f8cc41a843f8597065234b33e2190cb}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!getSize@{getSize}}
+\index{getSize@{getSize}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+int \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::get\+Size}
+
+
+
+Метод получения размеров таблицы 
+
+\begin{DoxyReturn}{Returns}
+Возвращает размер таблицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_a61bb36d8da161e6d6b614050abecaff0}\label{classGame__N_1_1Table_a61bb36d8da161e6d6b614050abecaff0}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+\mbox{\hyperlink{classGame__N_1_1Table}{Table}}$<$ I\+ND, I\+NF $>$ \& \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGame__N_1_1Table}{Table}}$<$ I\+ND, I\+NF $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Перегруженный оператор присваивания(копирующий) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на таблицу \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает ссылку на таблицу 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_ac29113253e7f3fea1b0c5a5ae196debd}\label{classGame__N_1_1Table_ac29113253e7f3fea1b0c5a5ae196debd}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+I\+NF \& \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const I\+ND \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Перегруженный оператор индексации l-\/value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на индекс \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает ссылку на поле информации по данному индексу 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_a522870291ba4a09d123270a4ea12b9c8}\label{classGame__N_1_1Table_a522870291ba4a09d123270a4ea12b9c8}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+const I\+NF \& \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const I\+ND \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Перегруженный оператор индексации r-\/value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на индекс \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает константную ссылку на поле информации по данному индексу 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame__N_1_1Table_af4469ccd8591610036c941c0403a38ec}\label{classGame__N_1_1Table_af4469ccd8591610036c941c0403a38ec}} 
+\index{Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}!setInf@{setInf}}
+\index{setInf@{setInf}!Game\_N::Table$<$ IND, INF $>$@{Game\_N::Table$<$ IND, INF $>$}}
+\doxysubsubsection{\texorpdfstring{setInf()}{setInf()}}
+{\footnotesize\ttfamily template$<$class I\+ND , class I\+NF $>$ \\
+void \mbox{\hyperlink{classGame__N_1_1Table}{Game\+\_\+\+N\+::\+Table}}$<$ I\+ND, I\+NF $>$\+::set\+Inf (\begin{DoxyParamCaption}\item[{const I\+ND \&}]{ind,  }\item[{const I\+NF \&}]{inf }\end{DoxyParamCaption})}
+
+
+
+Метод изменения информации по индексу 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Константная} & ссылка на индекс и на информацию \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+table.\+h\end{DoxyCompactItemize}

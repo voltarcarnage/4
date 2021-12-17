@@ -1,0 +1,187 @@
+\hypertarget{classGame__N_1_1Enemy}{}\doxysection{Game\+\_\+N\+::Enemy Class Reference}
+\label{classGame__N_1_1Enemy}\index{Game\_N::Enemy@{Game\_N::Enemy}}
+
+
+Inheritance diagram for Game\+\_\+N\+::Enemy\+:
+% FIG 0
+
+
+Collaboration diagram for Game\+\_\+N\+::Enemy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a22ea5da6283d81a94de77b9bd1af27fe}\label{classGame__N_1_1Enemy_a22ea5da6283d81a94de77b9bd1af27fe}} 
+{\bfseries Enemy} (sf\+::\+Vector2f pos)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_afbe73f235777e77fd004e12f40c7e8d8}\label{classGame__N_1_1Enemy_afbe73f235777e77fd004e12f40c7e8d8}} 
+{\bfseries Enemy} (int lvl, int range, int damage, std\+::string name, sf\+::\+Vector2f pos)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a437d6386c677a8b91c296a2a30356875}\label{classGame__N_1_1Enemy_a437d6386c677a8b91c296a2a30356875}} 
+int {\bfseries get\+Lvl} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_aea682bfb31fa0ac698fdbe7b8c9247e7}\label{classGame__N_1_1Enemy_aea682bfb31fa0ac698fdbe7b8c9247e7}} 
+int {\bfseries get\+Range} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_acde45ba7e9a2b74d0c07c964a4cbdad1}\label{classGame__N_1_1Enemy_acde45ba7e9a2b74d0c07c964a4cbdad1}} 
+int {\bfseries get\+Damage} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a1fdb6911f1db7db83492672c4c94d083}\label{classGame__N_1_1Enemy_a1fdb6911f1db7db83492672c4c94d083}} 
+\mbox{\hyperlink{classGame__N_1_1Cell}{Cell}} {\bfseries get\+Cell} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a9e092fe580937c44627fff850571b80f}\label{classGame__N_1_1Enemy_a9e092fe580937c44627fff850571b80f}} 
+sf\+::\+Vector2f {\bfseries get\+Pos} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_ad0fcdc82a1da027d4b599b32ecc32812}\label{classGame__N_1_1Enemy_ad0fcdc82a1da027d4b599b32ecc32812}} 
+void {\bfseries set\+Lvl} (int lvl)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a5eb4f734de4dbbf53b9e03f2f082fcca}\label{classGame__N_1_1Enemy_a5eb4f734de4dbbf53b9e03f2f082fcca}} 
+void {\bfseries set\+Range} (int range)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a37b5a978065d63ceb28b895fbf8e9835}\label{classGame__N_1_1Enemy_a37b5a978065d63ceb28b895fbf8e9835}} 
+void {\bfseries set\+Damage} (int damage)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a5d4ba66924a36eef7ce2215624983f7a}\label{classGame__N_1_1Enemy_a5d4ba66924a36eef7ce2215624983f7a}} 
+void {\bfseries set\+Pos} (int x, int y)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a766225070188fb50474291fe25ae436d}\label{classGame__N_1_1Enemy_a766225070188fb50474291fe25ae436d}} 
+void {\bfseries set\+Target\+Pos} (sf\+::\+Vector2f pos)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a2818c34be76c464a8269f8333e94f1bc}\label{classGame__N_1_1Enemy_a2818c34be76c464a8269f8333e94f1bc}} 
+bool {\bfseries is\+Fresh\+Target} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a6b1ede201175cea83d11746dcb8c0124}\label{classGame__N_1_1Enemy_a6b1ede201175cea83d11746dcb8c0124}} 
+void {\bfseries detect\+Hero} (sf\+::\+Vector2f pos)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a0bc2b684902134e9076334a700f053a4}\label{classGame__N_1_1Enemy_a0bc2b684902134e9076334a700f053a4}} 
+void {\bfseries undetect\+Hero} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a23b2d0ca61fc7c28b6c0e4d4b5af3f1f}\label{classGame__N_1_1Enemy_a23b2d0ca61fc7c28b6c0e4d4b5af3f1f}} 
+void {\bfseries gain\+Lvl} (int lvl)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a79040a3e4f204084b0f676d2311ba3cf}\label{classGame__N_1_1Enemy_a79040a3e4f204084b0f676d2311ba3cf}} 
+bool {\bfseries take\+Damage} (int dmg)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a2e88602ed045c2c986c7026287d54c81}\label{classGame__N_1_1Enemy_a2e88602ed045c2c986c7026287d54c81}} 
+bool {\bfseries is\+Alive} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a62777c2f30d89270c48e3e7e76827a0b}\label{classGame__N_1_1Enemy_a62777c2f30d89270c48e3e7e76827a0b}} 
+void {\bfseries die} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_abd19b3e1a7f38b2cff4be49923fbcbea}\label{classGame__N_1_1Enemy_abd19b3e1a7f38b2cff4be49923fbcbea}} 
+void {\bfseries move\+Up} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a0b372183515b141b3d3457b57af204e1}\label{classGame__N_1_1Enemy_a0b372183515b141b3d3457b57af204e1}} 
+void {\bfseries move\+Down} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_adb26778069eeac3127f777c63a1a8ac2}\label{classGame__N_1_1Enemy_adb26778069eeac3127f777c63a1a8ac2}} 
+void {\bfseries move\+Left} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a7b681d77309ab6db88c8b2c9f80e1b23}\label{classGame__N_1_1Enemy_a7b681d77309ab6db88c8b2c9f80e1b23}} 
+void {\bfseries move\+Right} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a59cc5bf4ccf595ba7fde61da5cfe3eea}\label{classGame__N_1_1Enemy_a59cc5bf4ccf595ba7fde61da5cfe3eea}} 
+bool {\bfseries moves\+Up} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_abd5c87d1971a87b9abc8a8e2584b3b47}\label{classGame__N_1_1Enemy_abd5c87d1971a87b9abc8a8e2584b3b47}} 
+bool {\bfseries moves\+Down} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_abfad36b47ef9d874173bfde466b9fa6f}\label{classGame__N_1_1Enemy_abfad36b47ef9d874173bfde466b9fa6f}} 
+bool {\bfseries moves\+Left} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a288794af0bb9df79e1430b806efed8d5}\label{classGame__N_1_1Enemy_a288794af0bb9df79e1430b806efed8d5}} 
+bool {\bfseries moves\+Right} () const
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a350baa66b18cc5530f31fcd4b86433d4}\label{classGame__N_1_1Enemy_a350baa66b18cc5530f31fcd4b86433d4}} 
+void {\bfseries stop\+Move} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a5f7e307422c25d86218c6f8acf5e0266}\label{classGame__N_1_1Enemy_a5f7e307422c25d86218c6f8acf5e0266}} 
+bool {\bfseries can\+Move} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&map)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_ab910cbb14e9f005dd3c9c50ff7f96938}\label{classGame__N_1_1Enemy_ab910cbb14e9f005dd3c9c50ff7f96938}} 
+void {\bfseries move\+To\+Hero} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&map)
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_aeba44230d6583f841c6304b57e180f66}\label{classGame__N_1_1Enemy_aeba44230d6583f841c6304b57e180f66}} 
+int {\bfseries face\+Where} ()
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_aa2822ed3385fb6dbd8dc5ef96b2b9290}\label{classGame__N_1_1Enemy_aa2822ed3385fb6dbd8dc5ef96b2b9290}} 
+void {\bfseries face\+There} (int direction)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a5cf9fed894ac8f0ef1858017c4286dfc}\label{classGame__N_1_1Enemy_a5cf9fed894ac8f0ef1858017c4286dfc}} 
+enum {\bfseries Directions} \{ \newline
+{\bfseries Up}, 
+{\bfseries Down}, 
+{\bfseries Right}, 
+{\bfseries Left}, 
+\newline
+{\bfseries Stop}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a92442b964769fcb776388c457de80881}\label{classGame__N_1_1Enemy_a92442b964769fcb776388c457de80881}} 
+Directions {\bfseries facing\+Dir\+\_\+} = Up
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_ab66383e26641ce10813ed4f4560bb9c4}\label{classGame__N_1_1Enemy_ab66383e26641ce10813ed4f4560bb9c4}} 
+Directions {\bfseries moving\+Dir\+\_\+} = Stop
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a4e501ccd654bdeed214292d3fdccc36d}\label{classGame__N_1_1Enemy_a4e501ccd654bdeed214292d3fdccc36d}} 
+bool {\bfseries alive\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a4b94534b862e597b642ac794c7893257}\label{classGame__N_1_1Enemy_a4b94534b862e597b642ac794c7893257}} 
+bool {\bfseries detect\+Hero\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a60dc6aeb23393210805e841c45bbbce2}\label{classGame__N_1_1Enemy_a60dc6aeb23393210805e841c45bbbce2}} 
+int {\bfseries lvl\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a154415f245a98884ba225a05ef63ec65}\label{classGame__N_1_1Enemy_a154415f245a98884ba225a05ef63ec65}} 
+int {\bfseries range\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_af4478d74845f59bff862d217672be6da}\label{classGame__N_1_1Enemy_af4478d74845f59bff862d217672be6da}} 
+int {\bfseries target\+Freshness\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_ae82ab0ad732fe21cdba7b169bec614a1}\label{classGame__N_1_1Enemy_ae82ab0ad732fe21cdba7b169bec614a1}} 
+sf\+::\+Vector2f {\bfseries position\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a1327bbeb500c23c14c255c248a9ef193}\label{classGame__N_1_1Enemy_a1327bbeb500c23c14c255c248a9ef193}} 
+sf\+::\+Vector2f {\bfseries hero\+Pos\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_af064d7a656734727170a0954bf96cf55}\label{classGame__N_1_1Enemy_af064d7a656734727170a0954bf96cf55}} 
+bool {\bfseries moving\+Up\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a083ac0a042ce5a84d44d8060b8a4dff3}\label{classGame__N_1_1Enemy_a083ac0a042ce5a84d44d8060b8a4dff3}} 
+bool {\bfseries moving\+Down\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_aaf5d282567db006d6d9fbd6480ae0563}\label{classGame__N_1_1Enemy_aaf5d282567db006d6d9fbd6480ae0563}} 
+bool {\bfseries moving\+Left\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_ad021f4a35b0c33e0c21a596e919a0003}\label{classGame__N_1_1Enemy_ad021f4a35b0c33e0c21a596e919a0003}} 
+bool {\bfseries moving\+Right\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a34e12492a4245dabc98bd2385c5b95a1}\label{classGame__N_1_1Enemy_a34e12492a4245dabc98bd2385c5b95a1}} 
+bool {\bfseries face\+Up\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a29903e4d4a906e62d225d4f2c73d6d32}\label{classGame__N_1_1Enemy_a29903e4d4a906e62d225d4f2c73d6d32}} 
+bool {\bfseries face\+Down\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_af4cc6a9b37f7eedf10ea84541af80a5f}\label{classGame__N_1_1Enemy_af4cc6a9b37f7eedf10ea84541af80a5f}} 
+bool {\bfseries face\+Left\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a37fb1967d8ccfbd8d70d3815a85e6b3e}\label{classGame__N_1_1Enemy_a37fb1967d8ccfbd8d70d3815a85e6b3e}} 
+bool {\bfseries face\+Right\+\_\+}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_ada2faab55b0e2df0085ef921c9dcd70b}\label{classGame__N_1_1Enemy_ada2faab55b0e2df0085ef921c9dcd70b}} 
+\mbox{\hyperlink{classGame__N_1_1Necromancy}{Necromancy}} {\bfseries necromancy}
+\item 
+\mbox{\Hypertarget{classGame__N_1_1Enemy_a4dcfe7faf8635c39d731b54b74e370f6}\label{classGame__N_1_1Enemy_a4dcfe7faf8635c39d731b54b74e370f6}} 
+\mbox{\hyperlink{classGame__N_1_1Cell}{Cell}} {\bfseries cell\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+enemy.\+h\end{DoxyCompactItemize}
