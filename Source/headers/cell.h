@@ -16,7 +16,7 @@ namespace Game_N{
         Cell(sf::Vector2f coords, int cell, sf::Color color);
         sf::Vector2f getCoords(){ return rectangle_.getPosition(); };
         sf::RectangleShape& getRectangle(){ return rectangle_; };
-        int getCell() const { return cell_; };
+        int getCellType() const { return cell_; };
         void setCell(int ch){ cell_ = ch; };
         void setCoords(sf::Vector2f coords){ rectangle_.setPosition(coords); };
   };

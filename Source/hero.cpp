@@ -10,9 +10,10 @@ namespace Game_N{
     mana_ = maxMana_;
     expToNextLvl_ = 100;
     range_ = 2;
+    damage_ = 10;
     amountOfUndeads_ = 2;
     coords_ = sf::Vector2f(0.f, 0.f);
-    circle_.setRadius(30.f);
+    circle_.setSize(sf::Vector2f(60.f,60.f));
     circle_.setPosition(100.f, 100.f);
     circle_.setFillColor(sf::Color::Blue);
     Spells* necromancy = new Necromancy();
@@ -46,10 +47,25 @@ namespace Game_N{
     spell_.addSpell("morphism", morphism);
     spell_.addSpell("desiccation", desiccation);
   }
-  
+
   bool Hero::isAlive()
   {
     return (hp_ > 0 ? true : false);
+  }
+
+  bool Hero::detectEnemy(sf::Vector2f coords)
+  {
+    sf::Vector2f direction;
+    direction.x = coords.x - circle_.getPosition().x;
+    direction.y = coords.y - circle_.getPosition().y;
+    double dxy = sqrt(direction.x * direction.x + direction.y * direction.y);
+    // std::cout << dxy << std::endl;
+    if(dxy <= spell_["necromancy"]->getRangeOfSpell() || dxy <= spell_["curse"]->getRangeOfSpell() || dxy <= spell_["morphism"]->getRangeOfSpell() || dxy <= spell_["desiccation"]->getRangeOfSpell())
+    {
+      // std::cout << "True" << std::endl;
+      return true;
+    }
+    return false;
   }
 
   bool Hero::takeDamage(int damage)

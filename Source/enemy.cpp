@@ -33,7 +33,7 @@ namespace Game_N{
     name_ = name;
     position_ = pos;
 
-    cell_ = Cell(pos,2,sf::Color(204,0,102));
+    cell_ = Cell(pos,2,sf::Color(100,100,100));
 
     movingUp_ = false;
   	movingDown_ = false;
@@ -109,6 +109,19 @@ namespace Game_N{
         facingDir_ = Right;
         break;
     }
+  }
+
+  void Enemy::move(sf::Vector2f coords)
+  {
+    sf::Vector2f direction;
+    direction.x = coords.x - cell_.getRectangle().getPosition().x;
+    direction.y = coords.y - cell_.getRectangle().getPosition().y;
+    double dxy = sqrt(direction.x * direction.x + direction.y * direction.y);
+    direction.x /= dxy;
+    direction.y /= dxy;
+    cell_.getRectangle().setPosition(cell_.getRectangle().getPosition().x
+                                      + direction.x * 2, cell_.getRectangle().getPosition().y + direction.y * 2);
+    // this->info.set_coords(sf::Vector2f (cell_.getRectangle().getPosition().x, cell_.getRectangle().getPosition().y - 20.f));
   }
 
   void Enemy::moveUp()

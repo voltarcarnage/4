@@ -12,8 +12,9 @@ namespace Game_N{
 
   Cell::Cell(sf::Vector2f coords, int cell, sf::Color color)
   {
-    // this->rect.setOutlineColor(sf::Color::Green);
     rectangle_ = sf::RectangleShape(sf::Vector2f(100, 100));
+    rectangle_.setOutlineColor(sf::Color::Black);
+    rectangle_.setOutlineThickness(true);
     rectangle_.setFillColor(color);
     rectangle_.setPosition(coords.x * 100, coords.y * 100);
     // coord_.x *= 100;

@@ -6,7 +6,7 @@ namespace Game_N{
   {
     lvlOfSpell_ = 1;
     dmgBySpell_ = 30;
-    rangeOfSpell_ = 3;
+    rangeOfSpell_ = 150;
   }
 
   Necromancy::Necromancy()
@@ -16,7 +16,7 @@ namespace Game_N{
 
   Curse::Curse()
   {
-    rangeOfSpell_ = 10;
+
   }
 
   Morphism::Morphism()

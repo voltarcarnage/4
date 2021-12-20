@@ -18,7 +18,8 @@ namespace Game_N{
       std::vector<Enemy> undeads_;
       Table<std::string, Spells* > spell_;
       sf::Vector2f coords_;
-      sf::CircleShape circle_;
+      sf::Clock clock_;
+      sf::RectangleShape circle_;
     public:
       Hero();
       Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
@@ -30,9 +31,11 @@ namespace Game_N{
       int getExpToNextLvl() const {return expToNextLvl_;}
       int getRange() const {return range_;}
       int getUndeads() const {return amountOfUndeads_;}
-      sf::CircleShape getShape() const {return circle_;}
+      sf::RectangleShape getShape() const {return circle_;}
       sf::Vector2f getCoords(){ return circle_.getPosition(); };
+      sf::Time getClock() const { return clock_.getElapsedTime(); };
 
+      void restartClock() { clock_.restart(); };
       bool takeDamage(int damage);
       bool isAlive();
 
@@ -40,6 +43,7 @@ namespace Game_N{
       void lvlUp();
       void heal(int heal, int mana);
 
+      bool detectEnemy(sf::Vector2f coords);
       void setRange(int range) {range_ = range;}
       void setLvl(int lvl) {lvl_ = lvl;}
       void setExp(int exp) {exp_ = exp;}

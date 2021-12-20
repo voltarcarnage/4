@@ -45,8 +45,8 @@ namespace Game_N{
                           cell.push_back(c);
                           break;
                       }
-                      case 'z':{//enemy
-                        Cell c(sf::Vector2f(x, y), 1, sf::Color(0, 255, 0));
+                      case 'e':{//enemy
+                        Cell c(sf::Vector2f(x, y), 6, sf::Color(100, 255, 0));
                         enemies_.emplace_back(1,2,10, "ork", sf::Vector2f(x, y));
                         cell.push_back(c);
                         break;
@@ -72,7 +72,7 @@ namespace Game_N{
   {
     int x = static_cast<int>(coords.x) / 100;
     int y = static_cast<int>(coords.y) / 100;
-    return mapCell_[y][x].getCell();
+    return mapCell_[y][x].getCellType();
   }
 
   sf::Vector2f Level::getHeroCoord()
@@ -80,7 +80,7 @@ namespace Game_N{
     for(int i = 0; i < mapCell_.size(); i++)
       for(int j = 0; j < mapCell_[i].size(); j++)
         if(mapStr_[i * mapCell_.size() + j] == '@')
-          return {j * 100.f, i * 100.f};
+          return {j * 110.f, i * 110.f};
   }
 
 }

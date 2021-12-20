@@ -7,7 +7,7 @@ namespace Game_N{
     maxHp_ = 100;
     hp_ = maxHp_;
     damage_ = 15;
-    speed_ = 50;
+    speed_ = 4;
   	xCoord_ = 0;
     yCoord_ = 0;
   }

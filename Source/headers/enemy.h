@@ -1,4 +1,3 @@
-#include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
@@ -20,6 +19,7 @@ namespace Game_N{
       int targetFreshness_ = 0;
       sf::Vector2f position_;
 		  sf::Vector2f heroPos_;
+      sf::Clock clock_;
       bool movingUp_,movingDown_,movingLeft_,movingRight_,faceUp_, faceDown_,faceLeft_,faceRight_;
       Necromancy necromancy;
       Cell cell_;
@@ -38,8 +38,10 @@ namespace Game_N{
       // void setStrength(int strength) {strength_ = strength;}
       void setRange(int range) {range_ = range;}
       void setDamage(int damage) {damage_ = damage;}
-      void setPos(int x, int y) {position_ = sf::Vector2f(x,y);}
+      void setPos(sf::Vector2f pos) {position_ = pos;}
       // void setImg(sf::Sprite& img);
+      sf::Time getClock() const { return clock_.getElapsedTime(); };
+      void restartClock() { clock_.restart(); };
 
       void setTargetPos(sf::Vector2f pos);
 		  bool isFreshTarget();
@@ -62,6 +64,8 @@ namespace Game_N{
       bool movesDown() const {return movingDown_;}
       bool movesLeft() const {return movingLeft_;}
       bool movesRight() const {return movingRight_;}
+
+      void move(sf::Vector2f coords);
 
       void stopMove();
 
