@@ -18,7 +18,8 @@ namespace Game_N{
       else
         break;
     }
-    UP_ = false; DOWN_ = false; LEFT_ = false; RIGHT_ = false; Z_ = false; X_ = false; C_ = false; V_ = false; INTERACT_ = false; YES_ = false; NO_ = false;
+    lvlUp_ = false;
+    UP_ = false; DOWN_ = false; LEFT_ = false; RIGHT_ = false; Z_ = false; X_ = false; C_ = false; V_ = false; INTERACT_ = false; HP_ = false; MANA_ = false;
     level_ = 0;
     hero_.setCoords(levels_[level_].getHeroCoord());
   }
@@ -39,6 +40,7 @@ namespace Game_N{
     window_.draw(hero_.getShape());//player
     hud_.drawHUD(window_,hero_);
     window_.display();
+    window_.setKeyRepeatEnabled(false);
   }
 
   void GameManager::chooseEvent()
@@ -80,10 +82,10 @@ namespace Game_N{
         V_ = pressed;
     if(key == sf::Keyboard::E)
         INTERACT_ = pressed;
-    if(key == sf::Keyboard::Y)
-        YES_ = pressed;
-    if(key == sf::Keyboard::N)
-        NO_ = pressed;
+    if(key == sf::Keyboard::H)
+        HP_ = pressed;
+    if(key == sf::Keyboard::M)
+        MANA_ = pressed;
   }
 
   void GameManager::interactionWithMap()
@@ -140,11 +142,56 @@ namespace Game_N{
   {
     for(int i = 0; i < levels_[level_].getEnemies().size(); i++)
     {
-      if(hero_.detectEnemy(levels_[level_].getEnemies()[i].getCell().getRectangle().getPosition()))
+      sf::Vector2f vect = levels_[level_].getEnemies()[i].getCell().getRectangle().getPosition();
+      if(hero_.detectEnemy(vect) && hero_.getMana() > 0)
       {
         if(Z_)
-          if(!levels_[level_].getEnemies()[i].takeDamage(30))
+        {
+          hero_.decreaseMana(hero_.getSpell("curse",vect)->getManaCost());
+          if(!levels_[level_].getEnemies()[i].takeDamage(hero_.getSpell("curse",vect)->getDmgBySpell()))
             levels_[level_].getEnemies()[i].die();
+          Z_ = false;
+        }
+        else if(X_)
+        {
+          if(!levels_[level_].getEnemies()[i].isAlive())
+          {
+            if(HP_)
+            {
+              hero_.castASpell("desiccationH",levels_[level_].getEnemies()[i]);
+              auto iter = levels_[level_].getEnemies().cbegin();
+              levels_[level_].getEnemies().erase(iter + i);
+              // HP_ = false;
+            }
+            else if(MANA_)
+            {
+              hero_.castASpell("desiccationM",levels_[level_].getEnemies()[i]);
+              auto iter = levels_[level_].getEnemies().cbegin();
+              levels_[level_].getEnemies().erase(iter + i);
+              // MANA_ = false;
+            }
+          }
+
+          // X_ = false;
+        }
+        else if(C_)
+        {
+          if(!levels_[level_].getEnemies()[i].isAlive())
+          {
+            levels_[level_].getEnemies()[i].setDamage(0);
+            levels_[level_].getEnemies()[i].setAlive();
+            levels_[level_].getEnemies()[i].getCell().getRectangle().setFillColor(sf::Color::Red);
+            // hero_.getUndeadsV().push_back(levels_[level_].getEnemies()[i]);
+            // auto iter = levels_[level_].getEnemies().cbegin();
+            // levels_[level_].getEnemies().erase(iter + i);
+          }
+          C_ = false;
+        }
+        else if(V_)
+        {
+
+          V_ = false;
+        }
       }
     }
   }

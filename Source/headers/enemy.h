@@ -3,7 +3,7 @@
 
 #include "cell.h"
 #include "entity.h"
-#include "spells.h"
+// #include "spells.h"
 
 #pragma once
 
@@ -21,7 +21,7 @@ namespace Game_N{
 		  sf::Vector2f heroPos_;
       sf::Clock clock_;
       bool movingUp_,movingDown_,movingLeft_,movingRight_,faceUp_, faceDown_,faceLeft_,faceRight_;
-      Necromancy necromancy;
+      // Necromancy necromancy;
       Cell cell_;
     public:
       Enemy(sf::Vector2f pos); //SFML
@@ -52,6 +52,7 @@ namespace Game_N{
 
       bool takeDamage(int dmg);
       bool isAlive();
+      void setAlive() {alive_ = true;}
       void die();
 
 

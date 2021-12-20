@@ -10,8 +10,8 @@ namespace Game_N{
     private:
       int lvl_;
       int exp_;
-      int mana_;
-      int maxMana_;
+      unsigned int mana_;
+      unsigned int maxMana_;
       int expToNextLvl_;
       int range_;
       int amountOfUndeads_;
@@ -39,9 +39,13 @@ namespace Game_N{
       bool takeDamage(int damage);
       bool isAlive();
 
+      void decreaseMana(int mana) {mana_ -= mana;}
       void gainExp(int exp);
       void lvlUp();
-      void heal(int heal, int mana);
+      void healHp(int heal);
+      void healMana(int mana);
+
+      std::vector<Enemy>& getUndeadsV() {return undeads_;}
 
       bool detectEnemy(sf::Vector2f coords);
       void setRange(int range) {range_ = range;}
@@ -50,7 +54,10 @@ namespace Game_N{
       void setMana(int mana) {mana_ = mana;}
       void setMaxMana(int maxMana) {maxMana_ = maxMana;}
       void setExpToNextLvl(int nextLvl) {expToNextLvl_ = nextLvl;}
-      void castASpell(int choise);
+      void castASpell(std::string spell,Enemy& enemy);
+
+      Spells* getSpell(std::string spell,sf::Vector2f coords);
+
       void setCoords(sf::Vector2f coords){ circle_.setPosition(coords); };
       // ~Hero();
       // void setStrength(int strength) {strength_ = strength;} Don't use

@@ -11,11 +11,11 @@ namespace Game_N{
     protected:
       enum Fractions {Goblin, Skeleton, Orc, Golem, Human};
       std::string name_;
-      int maxHp_;
-      int hp_;
-      int damage_;
+      unsigned int maxHp_;
+      unsigned int hp_;
+      unsigned int damage_;
       Fractions fraction_;
-      int speed_;
+      unsigned int speed_;
       int xCoord_;
       int yCoord_;
     public:

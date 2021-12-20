@@ -59,13 +59,28 @@ namespace Game_N{
     direction.x = coords.x - circle_.getPosition().x;
     direction.y = coords.y - circle_.getPosition().y;
     double dxy = sqrt(direction.x * direction.x + direction.y * direction.y);
-    // std::cout << dxy << std::endl;
+
     if(dxy <= spell_["necromancy"]->getRangeOfSpell() || dxy <= spell_["curse"]->getRangeOfSpell() || dxy <= spell_["morphism"]->getRangeOfSpell() || dxy <= spell_["desiccation"]->getRangeOfSpell())
-    {
-      // std::cout << "True" << std::endl;
       return true;
-    }
+
     return false;
+  }
+
+  Spells* Hero::getSpell(std::string spell,sf::Vector2f coords)
+  {
+    if(detectEnemy(coords))
+    {
+      if(spell == "necromancy")
+        return spell_["necromancy"];
+      else if(spell == "curse")
+        return spell_["curse"];
+      else if(spell == "morphism")
+        return spell_["morphism"];
+      else if(spell == "desiccation")
+        return spell_["desiccation"];
+    }
+
+    return NULL;
   }
 
   bool Hero::takeDamage(int damage)
@@ -90,7 +105,14 @@ namespace Game_N{
     lvl_ += 1;
     maxHp_ += (lvl_ * 0.41) * 41;
     hp_ = maxHp_;
+    maxMana_ += (lvl_ * 0.41) * 41;
+    mana_ = maxMana_;
     expToNextLvl_ += (lvl_ * 0.8)*100;
+    exp_ = 0;
+    spell_["necromancy"]->lvlUpSpell();
+    spell_["curse"]->lvlUpSpell();
+    spell_["morphism"]->lvlUpSpell();
+    spell_["desiccation"]->lvlUpSpell();
     switch(lvl_){
       case 3:
         amountOfUndeads_ = 3;
@@ -99,26 +121,33 @@ namespace Game_N{
     }
   }
 
-  void Hero::heal(int heal, int mana)
+  void Hero::healHp(int heal)
   {
     hp_ += heal;
+
     if(hp_ > maxHp_)
       hp_ = maxHp_;
+  }
 
+  void Hero::healMana(int mana)
+  {
     mana_ += mana;
 
     if(mana_ > maxMana_)
       mana_ = maxMana_;
   }
 
-  void Hero::castASpell(int choice)
+  void Hero::castASpell(std::string spell,Enemy& enemy)
   {
-    switch(choice)
+    if(spell == "desiccationH")
     {
-      case 0:
-      {
-        this->spell_["Necromance"]->castSpell();
-      }
+      healHp(spell_["desiccation"]->getE() * 40);
+      decreaseMana(spell_["desiccation"]->getManaCost());
+    }
+    else if(spell == "desiccationM")
+    {
+      decreaseMana(spell_["desiccation"]->getManaCost());
+      healMana(spell_["desiccation"]->getE() * 40 * 0.8);
     }
   }
 
