@@ -35,19 +35,43 @@ namespace Game_N{
                           cell.push_back(c);
                           break;
                       }
-                      case 'i':{//in
+                      case '+':{//in
                           Cell c(sf::Vector2f(x, y), 4,sf::Color::Cyan);
                           cell.push_back(c);
                           break;
                       }
-                      case 'o':{//out
+                      case '-':{//out
                           Cell c(sf::Vector2f(x, y), 5,sf::Color::Transparent);
                           cell.push_back(c);
                           break;
                       }
-                      case 'e':{//enemy
-                        Cell c(sf::Vector2f(x, y), 6, sf::Color(100, 255, 0));
-                        enemies_.emplace_back(1,2,10, "ork", sf::Vector2f(x, y));
+                      case 'g':{//ghoul
+                        Cell c(sf::Vector2f(x, y), 6, sf::Color(2, 255, 0));
+                        enemies_.emplace_back(num,3,14, false,"ghoul", sf::Vector2f(x, y),sf::Color(255,73,108));
+                        cell.push_back(c);
+                        break;
+                      }
+                      case 'o':{//ork
+                        Cell c(sf::Vector2f(x, y), 7, sf::Color(2, 255, 0));
+                        enemies_.emplace_back(num,2,10, false, "ork", sf::Vector2f(x, y),sf::Color(255,180,231));
+                        cell.push_back(c);
+                        break;
+                      }
+                      case 's':{//skeleton
+                        Cell c(sf::Vector2f(x, y), 7, sf::Color(2, 255, 0));
+                        enemies_.emplace_back(num,5,15, false, "skeleton", sf::Vector2f(x, y),sf::Color(125,127,125));
+                        cell.push_back(c);
+                        break;
+                      }
+                      case 'z':{//zombie
+                        Cell c(sf::Vector2f(x, y), 8, sf::Color(2, 255, 0));
+                        enemies_.emplace_back(num,2,17, true, "zombie", sf::Vector2f(x, y),sf::Color(178,236,93));
+                        cell.push_back(c);
+                        break;
+                      }
+                      case 'S':{//summoner
+                        Cell c(sf::Vector2f(x, y), 9, sf::Color(2, 255, 0));
+                        enemies_.emplace_back(num,2,8, false, "summoner", sf::Vector2f(x, y),sf::Color(148,0,211));
                         cell.push_back(c);
                         break;
                       }

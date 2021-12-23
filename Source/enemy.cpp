@@ -2,6 +2,11 @@
 
 namespace Game_N{
 
+  Enemy::Enemy()
+  {
+    
+  }
+
   Enemy::Enemy(sf::Vector2f pos)
   {
     alive_ = true;
@@ -15,7 +20,7 @@ namespace Game_N{
   	damage_ = 5;
   	range_ = 3;
 
-    cell_ = Cell(pos,2,sf::Color(100,100,100));
+    cell_ = Cell(pos,2,sf::Color(255,0,0));
 
   	movingUp_ = false;
   	movingDown_ = false;
@@ -23,7 +28,7 @@ namespace Game_N{
   	movingRight_ = false;
   }
 
-  Enemy::Enemy(int lvl, int range, int damage,std::string name, sf::Vector2f pos)
+  Enemy::Enemy(int lvl, int range, int damage,bool undead, std::string name, sf::Vector2f pos,sf::Color color)
   {
     alive_ = true;
     lvl_ = lvl;
@@ -33,13 +38,14 @@ namespace Game_N{
     name_ = name;
     position_ = pos;
 
-    cell_ = Cell(pos,2,sf::Color(100,100,100));
+    cell_ = Cell(pos,2,color);
 
     movingUp_ = false;
   	movingDown_ = false;
   	movingLeft_ = false;
   	movingRight_ = false;
 
+    undead_ = undead;
   }
 
   void Enemy::gainLvl(int lvl)

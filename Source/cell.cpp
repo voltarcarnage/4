@@ -17,8 +17,8 @@ namespace Game_N{
     rectangle_.setOutlineThickness(true);
     rectangle_.setFillColor(color);
     rectangle_.setPosition(coords.x * 100, coords.y * 100);
-    // coord_.x *= 100;
-    // coord_.y *= 100;
+    coord_.x *= 100;
+    coord_.y *= 100;
     cell_ = cell;
   }
 

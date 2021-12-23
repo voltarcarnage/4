@@ -114,10 +114,12 @@ namespace Game_N{
     spell_["morphism"]->lvlUpSpell();
     spell_["desiccation"]->lvlUpSpell();
     switch(lvl_){
-      case 3:
+      case 1:
         amountOfUndeads_ = 3;
-      case 6:
+      case 3:
         amountOfUndeads_ = 4;
+      case 6:
+        amountOfUndeads_ = 6;
     }
   }
 
@@ -141,14 +143,71 @@ namespace Game_N{
   {
     if(spell == "desiccationH")
     {
-      healHp(spell_["desiccation"]->getE() * 40);
       decreaseMana(spell_["desiccation"]->getManaCost());
+      healHp(spell_["desiccation"]->getE() * 40);
     }
     else if(spell == "desiccationM")
     {
       decreaseMana(spell_["desiccation"]->getManaCost());
       healMana(spell_["desiccation"]->getE() * 40 * 0.8);
     }
+    else if(spell == "necromancy")
+    {
+      enemy.setAlive(true);
+      // enemy.setRectangleColor(sf::Color(232,121,62));
+      undeads_.push_back(enemy);
+      undeadsNames_.push_back(enemy.getName());
+      decreaseMana(spell_["necromancy"]->getManaCost());
+    }
+    else if(spell == "morphism")
+    {
+      std::string name_str;
+      int k;
+      bool nameIn = false;
+      std::cin >> name_str;
+      for(int i = 0; i < undeadsNames_.size(); i++)
+      {
+        if(undeadsNames_[i] == name_str){
+          nameIn = true;
+          k = i;
+          break;
+        }
+      }
+      if(nameIn)
+      {
+        for(int i = 0; i < undeads_.size(); i++)
+        {
+          if(detectEnemy(undeads_[i].getCell().getRectangle().getPosition()))
+          {
+            if(!(undeads_[i].getName().find("-") != std::string::npos)){
+            std::cout << undeads_[i].getDamage() << " ";
+            undeads_[i].setName(undeads_[i].getName() + "-" + name_str);
+            undeads_[i].setDamage(undeads_[i].getDamage() + undeads_[k].getDamage());
+            undeads_[i].setHp(undeads_[i].getHp() + undeads_[k].getHp());
+            std::cout << undeads_[i].getDamage() << std::endl;
+            break;
+            }
+            else
+              continue;
+          }
+        }
+        decreaseMana(spell_["morphism"]->getManaCost());
+      }
+      else{
+        std::cout << "You don't know this type of enemy" << std::endl;
+      }
+    }
   }
+
+  // Hero::~Hero()
+  // {
+  //   // for(auto iter = spell_.begin(); iter != spell_.end(); iter++)
+  //   //   delete *iter->second;
+  //
+  //   delete spell_["necromancy"];
+  //   delete spell_["curse"];
+  //   delete spell_["morphism"];
+  //   delete spell_["desiccation"];
+  // }
 
 }

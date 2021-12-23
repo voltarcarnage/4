@@ -19,19 +19,19 @@ namespace Game_N{
 
   Necromancy::Necromancy()
   {
-    // manaCost_
+    manaCost_ = 10;
   }
 
   Curse::Curse()
   {
-    manaCost_ = 30;
+    manaCost_ = 1;
     dmgBySpell_ = 50;
     rangeOfSpell_ = 150;
   }
 
   Morphism::Morphism()
   {
-
+    manaCost_ = 1;
   }
 
   Desiccation::Desiccation()
@@ -39,7 +39,7 @@ namespace Game_N{
     manaCost_ = 1;
   }
 
-  void Necromancy::castSpell(Enemy & enemy)
+  void Necromancy::castSpell()
   {
     // for(int i = 0; i < hero.amountOfUndeads_; i++)
     // {
@@ -47,17 +47,17 @@ namespace Game_N{
     // }
   }
 
-  void Curse::castSpell(Enemy & enemy)
+  void Curse::castSpell()
   {
 
   }
 
-  void Morphism::castSpell(Enemy & enemy)
+  void Morphism::castSpell()
   {
     // if()
   }
 
-  void Desiccation::castSpell(Enemy & enemy)
+  void Desiccation::castSpell()
   {
 
   }

@@ -16,10 +16,12 @@ namespace Game_N{
       int range_;
       int amountOfUndeads_;
       std::vector<Enemy> undeads_;
+      std::vector<std::string> undeadsNames_;
       Table<std::string, Spells* > spell_;
       sf::Vector2f coords_;
       sf::Clock clock_;
       sf::RectangleShape circle_;
+      Cell cell_;
     public:
       Hero();
       Hero(int lvl,int maxHp, int damage, int exp, int maxMana, int expToNextLvl, int amountOfUndeads, int range);
@@ -30,7 +32,7 @@ namespace Game_N{
       int getMaxMana() const {return maxMana_;}
       int getExpToNextLvl() const {return expToNextLvl_;}
       int getRange() const {return range_;}
-      int getUndeads() const {return amountOfUndeads_;}
+      int getUndeadsCount() const {return amountOfUndeads_;}
       sf::RectangleShape getShape() const {return circle_;}
       sf::Vector2f getCoords(){ return circle_.getPosition(); };
       sf::Time getClock() const { return clock_.getElapsedTime(); };
@@ -45,7 +47,7 @@ namespace Game_N{
       void healHp(int heal);
       void healMana(int mana);
 
-      std::vector<Enemy>& getUndeadsV() {return undeads_;}
+      std::vector<Enemy>& getUndeads() {return undeads_;}
 
       bool detectEnemy(sf::Vector2f coords);
       void setRange(int range) {range_ = range;}

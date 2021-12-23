@@ -104,26 +104,6 @@ namespace Game_N{
   	text.setString(str1);
   	text.setPosition(20,starty_+height_-bordersize_-6*5-5*20);
   	window.draw(text);
-
-  	int hpbarsizex = 200;
-  	int hpbarsizey = 20;
-  	int hpbarx = 5;
-  	int hpbary = 5;
-
-  	sf::RectangleShape rect(sf::Vector2f(hpbarsizex,hpbarsizey));
-  	sf::RectangleShape green(sf::Vector2f((static_cast<float>(hero.getHp()/hero.getMaxHp()))*hpbarsizex,hpbarsizey));
-  	sf::RectangleShape red(sf::Vector2f((1-static_cast<float>(hero.getHp()/hero.getMaxHp()))*hpbarsizex,hpbarsizey));
-  	green.setFillColor(sf::Color::Green);
-  	green.setPosition(hpbarx,hpbary);
-  	red.setFillColor(sf::Color::Red);
-  	red.setPosition(static_cast<int>((hpbarx+static_cast<float>(hero.getHp()/hero.getMaxHp())*hpbarsizex)),hpbary);
-  	rect.setFillColor(sf::Color::Transparent);
-  	rect.setOutlineThickness(1);
-  	rect.setOutlineColor(sf::Color::Black);
-  	rect.setPosition(hpbarx,hpbary);
-  	window.draw(rect);
-  	window.draw(red);
-  	window.draw(green);
   }
 
   /*void HUD::drawTextBox(sf::RenderWindow & window)

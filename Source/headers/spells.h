@@ -1,6 +1,6 @@
 
 // #include "hero.h"
-#include "enemy.h"
+// #include "enemy.h"
 
 #pragma once
 
@@ -26,32 +26,32 @@ namespace Game_N{
       void setRangeOfSpell(int rng) {rangeOfSpell_ = rng;}
       void lvlUpSpell();
 
-      virtual void castSpell(Enemy& enemy) = 0;
+      virtual void castSpell() = 0;
   };
 
   class Necromancy : public Spells{
     public:
       Necromancy();
-
-      void castSpell(Enemy& enemy);
+      void castSpell();
   };
 
   class Curse : public Spells{
     public:
       Curse();
-      void castSpell(Enemy& enemy);
+      void castSpell();
   };
 
   class Morphism : public Spells{
     public:
       Morphism();
-      void castSpell(Enemy& enemy);
+      void castSpell();
   };
 
   class Desiccation : public Spells{
     public:
       Desiccation();
-      void castSpell(Enemy& enemy);
+      void castSpell();
+
   };
 
 }
