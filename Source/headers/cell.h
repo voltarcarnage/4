@@ -15,8 +15,10 @@ namespace Game_N{
         Cell();
         Cell(sf::Vector2f coords, int cell, sf::Color color);
         sf::Vector2f getCoords(){ return rectangle_.getPosition(); };
+        void setRectangle(sf::RectangleShape rect) {rectangle_ = rect;}
         sf::RectangleShape& getRectangle(){ return rectangle_; };
-        int getCellType() const { return cell_; };
+        int getCellType() { return cell_; };
+        void setCellType(int cell) {cell_ = cell;}
         void setCell(int ch){ cell_ = ch; };
         void setCoords(sf::Vector2f coords){ rectangle_.setPosition(coords); };
   };

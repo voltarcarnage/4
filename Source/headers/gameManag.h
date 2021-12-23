@@ -20,7 +20,7 @@ namespace Game_N{
         std::vector<Level> levels_;//level
         int level_;//lvl at the moment
         sf::RenderWindow window_;
-        bool UP_,DOWN_,LEFT_,RIGHT_,Z_,X_,C_,V_,INTERACT_,HP_,MANA_;
+        bool UP_,DOWN_,LEFT_,RIGHT_,Z_,X_,C_,V_,E_,HP_,MANA_;
         void input(sf::Keyboard::Key key, bool pressed);
     public:
         GameManager();
@@ -33,7 +33,7 @@ namespace Game_N{
         void interactionWithMap();
         void update();//prints all stuff
         void start();//run
-        // void changeLevel();
+        void changeLevel();
     };
 
 }

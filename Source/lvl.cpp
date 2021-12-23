@@ -36,12 +36,12 @@ namespace Game_N{
                           break;
                       }
                       case '+':{//in
-                          Cell c(sf::Vector2f(x, y), 4,sf::Color::Cyan);
+                          Cell c(sf::Vector2f(x, y), 4,sf::Color(255,228,205));
                           cell.push_back(c);
                           break;
                       }
                       case '-':{//out
-                          Cell c(sf::Vector2f(x, y), 5,sf::Color::Transparent);
+                          Cell c(sf::Vector2f(x, y), 5,sf::Color(128,218,235));
                           cell.push_back(c);
                           break;
                       }
@@ -75,6 +75,12 @@ namespace Game_N{
                         cell.push_back(c);
                         break;
                       }
+                      case 'G':{//golem
+                        Cell c(sf::Vector2f(x, y), 10, sf::Color(2, 255, 0));
+                        enemies_.emplace_back(num,2,3, false, "golemL", sf::Vector2f(x, y),sf::Color(123,11,234));
+                        cell.push_back(c);
+                        break;
+                      }
                       default:
                           continue;
                   }
@@ -97,6 +103,20 @@ namespace Game_N{
     int x = static_cast<int>(coords.x) / 100;
     int y = static_cast<int>(coords.y) / 100;
     return mapCell_[y][x].getCellType();
+  }
+
+  Cell Level::getCellType(sf::Vector2f coords)
+  {
+    int x = static_cast<int>(coords.x) / 100;
+    int y = static_cast<int>(coords.y) / 100;
+    return mapCell_[y][x];
+  }
+
+  void Level::setTileType(sf::Vector2f coords, Cell cell)
+  {
+    int x = static_cast<int>(coords.x) / 100;
+    int y = static_cast<int>(coords.y) / 100;
+    mapCell_[y][x] = cell;
   }
 
   sf::Vector2f Level::getHeroCoord()

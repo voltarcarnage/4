@@ -19,7 +19,7 @@ namespace Game_N{
         break;
     }
     getExp_ = false;
-    UP_ = false; DOWN_ = false; LEFT_ = false; RIGHT_ = false; Z_ = false; X_ = false; C_ = false; V_ = false; INTERACT_ = false; HP_ = false; MANA_ = false;
+    UP_ = false; DOWN_ = false; LEFT_ = false; RIGHT_ = false; Z_ = false; X_ = false; C_ = false; V_ = false; E_ = false; HP_ = false; MANA_ = false;
     level_ = 0;
     hero_.setCoords(levels_[level_].getHeroCoord());
   }
@@ -86,7 +86,7 @@ namespace Game_N{
     if(key == sf::Keyboard::V)
         V_ = pressed;
     if(key == sf::Keyboard::E)
-        INTERACT_ = pressed;
+        E_ = pressed;
     if(key == sf::Keyboard::H)
         HP_ = pressed;
     if(key == sf::Keyboard::M)
@@ -136,6 +136,7 @@ namespace Game_N{
           {
             if(hero_.getShape().getGlobalBounds().intersects(j.getRectangle().getGlobalBounds()))
             {
+              std::cout << "ttrue";
               hero_.takeDamage(1);
             }
           }
@@ -145,6 +146,17 @@ namespace Game_N{
 
   void GameManager::heroCombat()
   {
+    Cell cell;
+    for(int i = 0; i < levels_[level_].getCell().size(); i++){//map
+        for(int j = 0; j < levels_[level_].getCell()[i].size(); j++)
+        {
+          if(levels_[level_].getCell()[i][j].getCellType() == 2){
+            cell = levels_[level_].getCell()[i][j];
+            break;
+          }
+        }
+        break;
+      }
     for(int i = 0; i < levels_[level_].getEnemies().size(); i++)
     {
       sf::Vector2f vect = levels_[level_].getEnemies()[i].getCell().getRectangle().getPosition();
@@ -156,6 +168,14 @@ namespace Game_N{
           if(!levels_[level_].getEnemies()[i].takeDamage(hero_.getSpell("curse",vect)->getDmgBySpell()))
           {
             levels_[level_].getEnemies()[i].die();
+            if(levels_[level_].getEnemies()[i].getName() == "golemL")
+            {
+              levels_[level_].setTileType(vect, cell);
+              // levels_[level_].getCellType(vect).getRectangle().setFillColor(sf::Color::Yellow);
+              // auto iter = levels_[level_].getEnemies().cbegin();
+              // levels_[level_].getEnemies().erase(iter + i);
+              continue;
+            }
             if(levels_[level_].getEnemies()[i].getState()){
               auto iter = levels_[level_].getEnemies().cbegin();
               levels_[level_].getEnemies().erase(iter + i);
@@ -415,20 +435,20 @@ namespace Game_N{
                   }
               }
             }
-  if (sqrt(pow(levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().x - hero_.getShape().getPosition().x, 2) +
-                pow(levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().y - hero_.getShape().getPosition().y, 2)) <= 500.f) {
-                    sf::Time time = levels_[level_].getEnemies()[k].getClock();
-                        if(time.asSeconds() >= sf::seconds(5.f).asSeconds()) {
-                            Enemy summoned(levels_[level_].getEnemies()[k].getLvl(),2,5, true, "summoned", sf::Vector2f(levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().x, levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().y),sf::Color(100,100,100));
-                            // levels_[level_].addCell(summoned.getCell());
-                            // std::cout << summoned.getCell().getRectangle().getPosition().x << std::endl;
-                            levels_[level_].addEnemy(summoned);
-                            hero_.takeDamage(levels_[level_].getEnemies()[k].getDamage());
-                            levels_[level_].getEnemies()[k].restartClock();
-                            // break;
-                          }
-                      }
-      }
+  // if (sqrt(pow(levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().x - hero_.getShape().getPosition().x, 2) +
+  //               pow(levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().y - hero_.getShape().getPosition().y, 2)) <= 500.f) {
+  //                   sf::Time time = levels_[level_].getEnemies()[k].getClock();
+  //                       if(time.asSeconds() >= sf::seconds(5.f).asSeconds()) {
+  //                           Enemy summoned(levels_[level_].getEnemies()[k].getLvl(),2,5, true, "summoned", sf::Vector2f(levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().x, levels_[level_].getEnemies()[k].getCell().getRectangle().getPosition().y),sf::Color(100,100,100));
+  //                           // levels_[level_].addCell(summoned.getCell());
+  //                           // std::cout << summoned.getCell().getRectangle().getPosition().x << std::endl;
+  //                           levels_[level_].addEnemy(summoned);
+  //                           hero_.takeDamage(levels_[level_].getEnemies()[k].getDamage());
+  //                           levels_[level_].getEnemies()[k].restartClock();
+  //                           // break;
+  //                         }
+  //                     }
+  //     }
 
                   i.getFont().loadFromFile("resources/ShareTech.ttf");
 
@@ -441,6 +461,23 @@ namespace Game_N{
     }
 
 
+  }
+}
+
+  void GameManager::changeLevel()
+  {
+    if(levels_[level_].getTileType(hero_.getCoords()) == 4)
+       if(E_)
+       {
+           ++level_;
+           E_ = false;
+       }
+   if(levels_[level_].getTileType(hero_.getCoords()) == 5){
+       if(E_) {
+           --level_;
+           E_ = false;
+       }
+   }
   }
 
   void GameManager::moveHero()
@@ -489,6 +526,7 @@ namespace Game_N{
         // moveEnemy();
         updateUndeads(time);
         update();
+        changeLevel();
         // update_player(time);
     }
   }

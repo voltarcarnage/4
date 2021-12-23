@@ -21,6 +21,9 @@ namespace Game_N{
         int getTileType(sf::Vector2f coords);
         sf::Vector2f getHeroCoord();
 
+        Cell getCellType(sf::Vector2f coords);
+
+        void setTileType(sf::Vector2f coords, Cell cell) ;
         std::vector<std::vector<Cell>>& getCell(){ return mapCell_; }
         void addCell(std::vector<Cell> cell){ mapCell_.push_back(cell); }
         std::vector<Enemy>& getEnemies(){ return enemies_; }
